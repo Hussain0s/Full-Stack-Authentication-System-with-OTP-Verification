@@ -60,3 +60,7 @@ To run this project locally, follow these steps:
 ```bash
 git clone https://github.com/your-username/your-repo-name.git
 cd your-repo-name
+###2. Install Dependencies
+Install the required dependencies for the frontend:
+```bash
+npm install
