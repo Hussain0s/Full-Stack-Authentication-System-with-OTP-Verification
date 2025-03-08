@@ -1,0 +1,133 @@
+/* Global Styling */
+:root {
+    --primary-color: #00ff88;
+    --secondary-color: #00ccff;
+    --background-gradient: radial-gradient(circle, #1a1a1a, #000000);
+    --glassmorphism-bg: rgba(255, 255, 255, 0.1);
+    --glassmorphism-border: rgba(255, 255, 255, 0.2);
+    --neon-glow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+}
+
+/* Center the entire page */
+.verify-otp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background-gradient);
+    position: relative;
+    overflow: visible; /* ✅ Fix button issue */
+}
+
+/* OTP Form Box (Glassmorphism Effect) */
+.verify-otp-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    text-align: center; /* ✅ Centers all text */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glassmorphism-border);
+}
+
+/* Animated Background Effect */
+.verify-otp-container::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    animation: particle-move 10s linear infinite;
+    z-index: -1; /* ✅ Background stays behind */
+}
+
+@keyframes particle-move {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-50%) translateX(-50%); }
+}
+
+/* Heading */
+.verify-otp-box h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: var(--neon-glow);
+}
+
+/* Input Fields */
+.verify-otp-box input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glassmorphism-border);
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.verify-otp-box input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Submit Button */
+.verify-otp-box button {
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+}
+
+.verify-otp-box button:hover {
+    transform: scale(1.05);
+}
+
+/* Messages */
+.message {
+    font-size: 14px;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.message.success {
+    color: var(--primary-color);
+    text-shadow: var(--neon-glow);
+}
+
+.message.error {
+    color: #ff4444;
+    text-shadow: 0 0 10px #ff4444;
+}
+
+/* Back to Forgot Password */
+.back-to-forgot {
+    color: var(--primary-color);
+    cursor: pointer;
+    margin-top: 15px;
+    text-shadow: var(--neon-glow);
+}
+
+.back-to-forgot:hover {
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .verify-otp-box {
+        width: 90%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,69 @@
+/* 🎨 Full-Screen Video Background */
+.not-found-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end; /* Content moves to bottom-right */
+    align-items: flex-end;
+    padding: 30px;
+}
+
+/* 📽️ Video Background */
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    pointer-events: none; /* Prevents user from interacting with video */
+}
+
+/* 🔥 Error Message */
+.not-found-container p {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* 🚀 Animated "Go to Login" Link */
+.not-found-container a {
+    color: #00ff88;
+    font-size: 20px;
+    text-decoration: none;
+    text-shadow: 0 0 15px #00ff88;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.not-found-container a:hover {
+    text-shadow: 0 0 30px #00ff88;
+    transform: scale(1.1);
+}
+
+/* 🎬 Fade-in Animation */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 600px) {
+    .not-found-container {
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+}

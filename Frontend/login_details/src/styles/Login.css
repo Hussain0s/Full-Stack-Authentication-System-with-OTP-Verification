@@ -1,0 +1,212 @@
+/* 🎨 Global Variables */
+:root {
+    --primary-color: #00ff88;
+    --secondary-color: #ff00b7;
+    --background-gradient: radial-gradient(circle, #0e0d0df1, #101010f2);
+    --glassmorphism-bg: rgba(17, 17, 17, 0.241);
+    --glassmorphism-border: rgba(255, 255, 255, 0.2);
+    --neon-glow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+    --cursor-size: 20px;
+}
+
+/* 🖱️ Custom Cursor */
+body {
+    cursor: none;
+}
+
+.custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    background: radial-gradient(circle, var(--primary-color), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.custom-cursor.hover {
+    width: calc(var(--cursor-size) * 2);
+    height: calc(var(--cursor-size) * 2);
+    background: radial-gradient(circle, var(--secondary-color), transparent);
+}
+
+/* 🌌 Background Animation */
+.book-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: var(--background-gradient);
+    overflow: hidden;
+    position: relative;
+}
+
+.book-container::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    animation: particle-move 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes particle-move {
+    0% { transform: translateY(0) translateX(0); }
+    100% { transform: translateY(-50%) translateX(-50%); }
+}
+
+/* 📖 Floating Glassmorphism Book */
+.book {
+    background: var(--glassmorphism-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid var(--glassmorphism-border);
+    box-shadow: 0 8px 32px rgba(182, 14, 179, 0.2);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotateX(0) rotateY(0); }
+    50% { transform: translateY(-20px) rotateX(10deg) rotateY(10deg); }
+}
+
+/* 🔥 Neon Text Animation */
+.login-content h2 {
+    color: var(--primary-color);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: var(--neon-glow);
+    animation: neon-text 1.5s infinite alternate;
+}
+
+@keyframes neon-text {
+    0% { text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color); }
+    100% { text-shadow: 0 0 20px var(--primary-color), 0 0 40px var(--primary-color); }
+}
+
+/* 🔹 Input Fields with Neon Glow */
+.login-content input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-content input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.5), 0 0 30px rgba(0, 255, 136, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* 🎨 3D Holographic Button */
+.login-content button {
+    background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(239, 8, 8, 0.934);
+    transform: translateZ(20px);
+}
+
+.login-content button:hover {
+    transform: translateY(-5px) translateZ(30px);
+    box-shadow: 0 5px 20px rgba(193, 217, 14, 0.874);
+}
+
+.login-content button:active {
+    transform: translateY(0) translateZ(20px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+}
+
+/* ✨ Neon Link Effects */
+.login-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    text-shadow: var(--neon-glow);
+    position: relative;
+}
+
+.login-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.login-content a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* 🚨 Error Message with Shake Effect */
+.error-message {
+    color: #ff4444;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #ff4444;
+    animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+/* ✨ Advanced Particle System */
+.particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: particle-float 5s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+@keyframes particle-float {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-20px) translateX(20px); }
+}
+
+/* 📱 Mobile Responsive Fix */
+@media (max-width: 400px) {
+    .book {
+        width: 90%;
+        padding: 20px;
+    }
+}

@@ -1,0 +1,127 @@
+/* Register.css */
+.register-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: radial-gradient(circle, #15e785f0, #bb169ad8);
+    overflow: hidden;
+    position: relative;
+}
+
+.register-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+    animation: particle-move 10s linear infinite;
+    z-index: 1;
+}
+
+@keyframes particle-move {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    100% {
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+.register-box {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.925);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.register-box h2 {
+    color: #111111;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff2200, 0 0 20px #121212;
+}
+
+.input-group input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 12px;
+    color: white;
+    transition: all 0.3s ease;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2b00ff;
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.275), 0 0 30px rgba(224, 227, 226, 0.3);
+    background: rgba(218, 17, 17, 0.2);
+}
+
+.register-btn {
+    background: linear-gradient(145deg, #f80707, #00ccff);
+    border: none;
+    border-radius: 10px;
+    padding: 12px 20px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(221, 228, 8, 0.4);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(178, 17, 17, 0.3), transparent);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s ease;
+    border-radius: 50%;
+}
+
+.register-btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.register-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 255, 136, 0.6), 0 15px 30px rgba(0, 255, 136, 0.4);
+}
+
+.register-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.4);
+}
+
+.login-link {
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #2600ff;
+    text-decoration: none;
+    text-shadow: 0 0 10px #00ff88;
+}
+
+.error-message {
+    color: #ff4444;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #ff4444;
+}
