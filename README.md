@@ -25,4 +25,20 @@ This project is a React-based authentication system that includes features like 
 ---
 
 ## 📂 Project Structure
-
+/src
+|-- /components
+|   |-- Login.js
+|   |-- Register.js
+|   |-- ForgotPassword.js
+|   |-- VerifyOtp.js
+|   |-- ResetPassword.js
+|   |-- NotFound.js
+|-- /styles
+|   |-- Login.css
+|   |-- Register.css
+|   |-- ForgotPassword.css
+|   |-- VerifyOtp.css
+|   |-- ResetPassword.css
+|   |-- NotFound.css
+|-- App.js
+|-- index.js
