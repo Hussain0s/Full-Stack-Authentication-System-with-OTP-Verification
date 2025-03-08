@@ -1,1 +1,1 @@
-SELECT * FROM login_details.otp_details;
+SELECT * FROM login_details.login_data;
