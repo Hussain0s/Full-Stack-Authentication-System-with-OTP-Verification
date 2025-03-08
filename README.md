@@ -75,4 +75,19 @@ Follow these steps to run the project locally:
    ```bash
    git clone https://github.com/your-username/your-repo-name.git
    cd your-repo-name
+##Screenshots
+   (You can add screenshots of the following pages here:)
+
+   - **Login Page
+
+  - **Register Page
+
+- **Forgot Password Page
+
+- **OTP Verification Page
+
+- **Reset Password Page
+
+- **404 Not Found Page
+
 
