@@ -52,15 +52,27 @@ This project is a **full-stack authentication system** built with **React** for 
 
 ---
 
-## Installation
 
-To run this project locally, follow these steps:
+---
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
-###2. Install Dependencies
-Install the required dependencies for the frontend:
-```bash
-npm install
+## 🔗 API Endpoints
+
+The frontend interacts with a backend server for authentication via the following API endpoints:
+
+- **Login:** `POST /api/auth/login`  
+- **Register:** `POST /api/auth/register`  
+- **Forgot Password:** `POST /api/auth/forgot-password`  
+- **Verify OTP:** `POST /api/auth/verify-otp`  
+- **Reset Password:** `POST /api/auth/reset-password`  
+
+---
+
+## 🖥️ Installation
+
+Follow these steps to run the project locally:
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+
