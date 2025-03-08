@@ -51,6 +51,6 @@ Follow these steps to run the project locally:
 2. **Install Dependencies**
    ```npm install
 3.**Run the Development Server**
-   ```npm start\n
+   ```npm start
 4.**Open the App**
   ```The app will be running at http://localhost:3000.
