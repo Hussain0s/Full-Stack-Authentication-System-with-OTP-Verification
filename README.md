@@ -150,6 +150,26 @@ You can use tools like Postman or Swagger to test the endpoints.
 
   ![Forget Password Page ](https://github.com/Hussain0s/Mail/blob/hero/Screenshot%202025-03-10%20123444.png?raw=true)
 
+  5.Otp in Mail 
+
+  ![Otp in Mail Page ](https://github.com/Hussain0s/Mail/blob/hero/Screenshot%202025-03-10%20123531.png?raw=true)
+
+  6.Verify Otp
+
+  ![Verify Otp Page ](https://github.com/Hussain0s/Mail/blob/e8b8c29b4125d927cfba2c01d0162336d42fdc42/Screenshot%202025-03-10%20123551.png)
+
+  7.New Password
+
+  ![New Password Page ](https://github.com/Hussain0s/Mail/blob/e8b8c29b4125d927cfba2c01d0162336d42fdc42/Screenshot%202025-03-10%20123608.png?raw=true)
+
+  8.Database login list
+
+  ![Database Page ](https://github.com/Hussain0s/Mail/blob/e8b8c29b4125d927cfba2c01d0162336d42fdc42/Screenshot%202025-03-10%20124113.png)
+
+  9.Databace Otp
+
+  ![Databace Otp Page ](https://github.com/Hussain0s/Mail/blob/e8b8c29b4125d927cfba2c01d0162336d42fdc42/Screenshot%202025-03-10%20124009.png?raw=true)
+
 
 ## 👨‍💻 Contributing
 
