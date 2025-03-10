@@ -134,6 +134,10 @@ You can use tools like Postman or Swagger to test the endpoints.
 }
 ```
 ## 📸 Screenshots
+    1.Registration
+             ## Screenshot
+  ![Registration Page](./assets/screenshot.png)
+
 
 ## 👨‍💻 Contributing
 
