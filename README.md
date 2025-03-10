@@ -136,7 +136,15 @@ You can use tools like Postman or Swagger to test the endpoints.
 ## 📸 Screenshots
   1.Registration
   
-  ![Registration Page](https://github.com/Hussain0s/Mail/blob/3cc484464d9841290bb14acc8f25a951f7d0cde5/Screenshot%202025-03-10%20123305.png)
+    ![Registration Page](https://github.com/Hussain0s/Mail/blob/3cc484464d9841290bb14acc8f25a951f7d0cde5/Screenshot%202025-03-10%20123305.png)
+
+  2.Registration Successfully 
+
+    ![Registration Successfully ](https://github.com/Hussain0s/Mail/blob/hero/Screenshot%202025-03-10%20123325.png?raw=true)
+
+  2.Login 
+
+    ![Login Page ](https://github.com/Hussain0s/Mail/blob/hero/Screenshot%202025-03-10%20123325.png?raw=true)
 
 
 ## 👨‍💻 Contributing
