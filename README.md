@@ -1,106 +1,151 @@
-# React Authentication System with OTP Verification
+# Full Stack Authentication System with OTP Verification
 
-This project is a **full-stack authentication system** built with **React** for the frontend and a **Node.js/Express** backend (assumed based on the API endpoints). It provides a seamless user authentication experience, including features like user registration, login, password recovery via OTP, and password reset. The UI is designed with modern **Glassmorphism** and **Neon effects** for a visually appealing experience.
+This project is a comprehensive **full-stack authentication system** featuring a React frontend and a Spring Boot backend. It incorporates secure authentication with OTP verification, user registration, password recovery, and an enhanced UI with glassmorphism effects.
 
----
+## 🚀 Features
 
-## Features
+### Frontend (React)
+✅ User Registration  
+✅ User Login  
+✅ Forgot Password (OTP-based recovery)  
+✅ Password Reset  
+✅ 404 Not Found Page with creative video backgrounds  
+✅ Glassmorphism UI with modern animations and effects  
 
-1. **User Registration**:
-   - Users can create an account by providing their name, phone number, email, and password.
-   - Form validation ensures all fields are filled correctly.
+### Backend (Spring Boot)
+✅ User Authentication with JWT  
+✅ OTP Generation and Verification  
+✅ BCrypt Encryption for Passwords  
+✅ Global Exception Handling  
+✅ Secure CORS Configuration  
 
-2. **User Login**:
-   - Registered users can log in using their email and password.
-   - Successfully logged-in users are redirected to the dashboard (or another protected route).
+## 🛠️ Technologies Used
 
-3. **Forgot Password**:
-   - Users can request an OTP to reset their password if they forget it.
-   - The OTP is sent to the user's email.
+- **Frontend**: React, Axios, React Router DOM
+- **Backend**: Spring Boot, Spring Security, BCrypt, JavaMailSender
+- **Database**: MySQL / H2 Database
+- **Styling**: CSS with Glassmorphism and Neon effects
 
-4. **OTP Verification**:
-   - Users can verify the OTP sent to their email to proceed with password reset.
-   - The verified email and OTP are stored in `sessionStorage` for security.
-
-5. **Password Reset**:
-   - Users can reset their password after OTP verification.
-   - The new password is validated to ensure it meets security requirements (e.g., minimum length).
-
-6. **404 Not Found Page**:
-   - A custom 404 page with a YouTube video background for a better user experience.
-
-7. **Responsive Design**:
-   - The application is fully responsive and works seamlessly on both desktop and mobile devices.
-
-8. **Modern UI**:
-   - The UI is designed with **Glassmorphism** and **Neon effects** for a sleek and modern look.
-
----
-
-## Technologies Used
-
-### Frontend
-- **React**: A JavaScript library for building user interfaces.
-- **React Router DOM**: For handling routing in the application.
-- **Axios**: For making HTTP requests to the backend API.
-- **CSS**: Custom styles with Glassmorphism and Neon effects.
-
-### Backend (Assumed)
-- **Node.js**: A JavaScript runtime for building the backend.
-- **Express**: A web framework for Node.js to handle API requests.
-- **MongoDB** (or any other database): For storing user data.
-
----
-
-
----
+## 📂 Project Structure
+```
+/src
+  /controller
+    - AuthController.java
+  /config
+    - SecurityConfig.java
+  /dto
+    - ForgotPasswordRequest.java
+    - LoginRequest.java
+    - RegisterRequest.java
+    - ResetPasswordRequest.java
+    - UserResponse.java
+    - VerifyOtpRequest.java
+  /entity
+    - Login.java
+    - OtpDetails.java
+  /repository
+    - LoginRepository.java
+    - OtpRepository.java
+  /service
+    - AuthService.java
+    - OtpService.java
+    - EmailService.java
+  /exception
+    - CustomException.java
+    - GlobalExceptionHandler.java
+```
 
 ## 🔗 API Endpoints
 
-The frontend interacts with a backend server for authentication via the following API endpoints:
+- **Login**: `POST /api/auth/login`
+- **Register**: `POST /api/auth/register`
+- **Forgot Password**: `POST /api/auth/forgot-password`
+- **Verify OTP**: `POST /api/auth/verify-otp`
+- **Reset Password**: `POST /api/auth/reset-password`
 
-- **Login:** `POST /api/auth/login`  
-- **Register:** `POST /api/auth/register`  
-- **Forgot Password:** `POST /api/auth/forgot-password`  
-- **Verify OTP:** `POST /api/auth/verify-otp`  
-- **Reset Password:** `POST /api/auth/reset-password`  
+## ⚙️ Installation Guide
 
----
+### Frontend Setup
 
-## 🖥️ Installation
+1. Clone the Repository
+    ```sh
+    git clone https://github.com/your-username/your-repo-name.git
+    cd frontend-folder
+    ```
+2. Install Dependencies
+    ```sh
+    npm install
+    ```
+3. Run the Development Server
+    ```sh
+    npm start
+    ```
 
-Follow these steps to run the project locally:
+### Backend Setup
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
-##Screenshots
-   (You can add screenshots of the following pages here:)
+1. Navigate to Backend Folder
+    ```sh
+    cd backend-folder
+    ```
+2. Configure Database
+    Add these properties in `application.properties`:
+    ```properties
+    spring.datasource.url=jdbc:mysql://localhost:3306/your_database
+    spring.datasource.username=your_username
+    spring.datasource.password=your_password
+    ```
+3. Install Dependencies
+    ```sh
+    mvn install
+    ```
+4. Run the Application
+    ```sh
+    mvn spring-boot:run
+    ```
 
-   - **Login Page
+## 🛠 API Testing
 
-  - **Register Page
+You can use tools like Postman or Swagger to test the endpoints.
 
-- **Forgot Password Page
+## 📬 Sample Requests
 
-- **OTP Verification Page
+### Login Request
+```json
+{
+  "email": "user@example.com",
+  "password": "password123"
+}
+```
 
-- **Reset Password Page
+### Register Request
+```json
+{
+  "email": "user@example.com",
+  "name": "John Doe",
+  "phone": "1234567890",
+  "password": "password123"
+}
+```
 
-- **404 Not Found Page
+### Forgot Password Request
+```json
+{
+  "email": "user@example.com"
+}
+```
 
+## 👨‍💻 Contributing
 
+Feel free to fork the repository and submit a pull request. Ensure your code follows the project's coding standards and maintains the design aesthetics.
 
-##Contributing
+## 📜 License
 
-If you'd like to contribute to this project, feel free to fork the repository and submit a pull request. Please ensure your code follows the project's coding standards.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
+## 📬 Contact
 
-Acknowledgments
-React: For providing a powerful library for building user interfaces.
+For issues, feature requests, or collaboration, feel free to open an issue or reach out directly.
 
-React Router DOM: For seamless routing in the application.
 
 Axios: For simplifying HTTP requests.
 
