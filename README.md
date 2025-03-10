@@ -133,6 +133,7 @@ You can use tools like Postman or Swagger to test the endpoints.
   "email": "user@example.com"
 }
 ```
+## 📸 Screenshots
 
 ## 👨‍💻 Contributing
 
