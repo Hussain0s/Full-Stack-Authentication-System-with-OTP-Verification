@@ -94,20 +94,42 @@ public class OtpService {
 
     private void sendOtpEmail(String email, String otp) {
         String subject = "Your OTP Code";
-        String message = String.format("""
-                Dear User, 
 
-                Your OTP is: %s
-                This OTP will expire in %d seconds.
+        // Improved HTML structure for clear formatting
+        String message = String.format(
+            """
+            <html>
+            <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+                <p>Dear User,</p>
 
-                Best Regards,
-                Your Application Team
-                """, otp, otpExpirySeconds);
-        for (String line :message.split("\n")) {
-        	System.out.println(line.trim());
-        }
+                <p><strong>Your OTP is:</strong> 
+                    <span style="font-size: 20px; color: #4CAF50;">
+                        <b>%s</b>
+                    </span>
+                </p>
+
+                <p>This OTP will expire in <b>%d seconds</b>.</p>
+
+                <hr style="border: 0; height: 1px; background-color: #ddd;">
+
+                <p>Best Regards,<br>Your Application Team</p>
+
+                <p style="margin-top: 10px;">
+                    <strong>Sagar Hussain J</strong><br>
+                    <strong>Contact:</strong> <span style="color: #FF0000;"><b>8099947350</b></span>
+                </p>
+            </body>
+            </html>
+            """,
+            otp, otpExpirySeconds
+        );
 
         emailService.sendEmail(email, subject, message);
+
         log.info("✅ OTP email sent to {}", email);
     }
+
+
+
+
 }
